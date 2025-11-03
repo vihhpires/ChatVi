@@ -1,0 +1,301 @@
+/* Reset básico e altura total */
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #533f2b, #ac42af);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 97vh;
+  width: 97vw;
+  max-width: 1600px;
+  background: #fefefe;
+  border-radius: 16px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.chat-container header {
+  background: #4a90e2;
+  color: white;
+  padding: 1em;
+  text-align: center;
+  font-size: 0.7em;
+  flex-shrink: 0;
+}
+
+.todas-mensagens {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  overflow-y: auto;
+}
+
+.linha-mensagem {
+  display: flex;
+  align-items: flex-start;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.mensagem-bot {
+  justify-content: flex-start;
+}
+
+.mensagem-usuario {
+  justify-content: flex-end;
+}
+
+.bolha-mensagem {
+  padding: 0.8rem 1.2rem;
+  border-radius: 20px;
+  max-width: 70%;
+  font-size: 0.95rem;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.293);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.bolha-mensagem:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+.mensagem-bot .bolha-mensagem {
+  background: #e0e7ff;
+  color: #333;
+  border-bottom-left-radius: 4px;
+}
+
+.mensagem-usuario .bolha-mensagem {
+  background: #4a90e2;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.composer {
+  display: flex;
+  padding: 0.8em;
+  background: #fafafa;
+  border-top: 1px solid #ddd;
+  gap: 0.5em;
+  flex-shrink: 0;
+}
+
+.composer textarea {
+  flex: 1;
+  resize: none;
+  border: 1px solid #bcb3b3;
+  border-radius: 12px;
+  padding: 0.6em;
+  font-size: 1em;
+  outline: none;
+  overflow: hidden;
+}
+
+.composer textarea:focus {
+  border-color: #4a90e2;
+  box-shadow: 0px 0px 4px rgba(74,144,226,0.5);
+}
+
+.botao-enviar {
+  background:  #357ABD  !important;
+  border: none;
+  color: white;
+  padding: 0.6em 1em;
+  border-radius: 12px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background  #4a90e2;
+}
+
+.botao-enviar:hover {
+  background: linear-gradient(135deg, #533f2b, #ac42af)  !important;
+}
+
+.chat-container footer {
+  background: #d4d0d0;
+  text-align: center;
+  font-size: 0.5rem;
+  padding: 0.5em;
+  color: #555;
+  flex-shrink: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .chat-container {
+    width: 98%;
+    height: 95%;
+    border-radius: 12px;
+  }
+
+  .chat-container header {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
+
+  .bolha-mensagem {
+    font-size: 0.9rem;
+    max-width: 80%;
+  }
+
+  .composer textarea {
+    font-size: 0.95rem;
+  }
+
+  .botao-enviar {
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .chat-container footer {
+    font-size: 0.75rem;
+    padding: 0.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-container {
+    width: 100%;
+    height: 95%;
+    border-radius: 0;
+  }
+
+  .todas-mensagens {
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .bolha-mensagem {
+    font-size: 0.85rem;
+    max-width: 85%;
+  }
+
+  .composer textarea {
+    font-size: 0.9rem;
+  }
+
+  .botao-enviar {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .chat-container {
+    width: 100%;
+    height: 93%;
+    border-radius: 0;
+  }
+
+  .todas-mensagens {
+    padding: 0.3rem;
+    gap: 0.3rem;
+  }
+
+  .bolha-mensagem {
+    font-size: 0.8rem;
+    max-width: 90%;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .chat-container header {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .composer textarea {
+    font-size: 0.8rem;
+    padding: 0.3rem;
+  }
+
+  .botao-enviar {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .chat-container footer {
+    font-size: 0.7rem;
+    padding: 0.3rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .chat-container {
+    width: 100%;
+    height: 90%;
+    border-radius: 0;
+  }
+
+  .bolha-mensagem {
+    font-size: 0.75rem;
+    max-width: 95%;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .composer textarea {
+    font-size: 0.75rem;
+    padding: 0.3rem;
+  }
+
+  .botao-enviar {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .chat-container header {
+    font-size: 0.9rem;
+    padding: 0.4rem;
+  }
+
+  .chat-container footer {
+    font-size: 0.65rem;
+    padding: 0.2rem;
+  }
+
+  .todas-mensagens {
+    padding: 0.2rem;
+    gap: 0.2rem;
+  }
+}
+
