@@ -3,6 +3,5 @@
 
 Implantação
 
-chatvi-gjea6bx2t-vihhpires-projects.vercel.app
-
+https://chatvi.vercel.app/
 
